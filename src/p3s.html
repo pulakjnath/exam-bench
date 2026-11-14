@@ -1,0 +1,22 @@
+<style>
+.toast{position:fixed;left:50%;transform:translateX(-50%) translateY(16px);bottom:calc(24px + env(safe-area-inset-bottom,0px));background:var(--ink);color:var(--paper);padding:9px 16px;border-radius:3px;font-weight:600;opacity:0;pointer-events:none;z-index:40;max-width:calc(100vw - 32px)}
+.toast.on{opacity:1;transform:translateX(-50%)}
+@media (max-width:760px){.toast{bottom:calc(84px + env(safe-area-inset-bottom,0px))}}
+@media (prefers-reduced-motion:no-preference){.toast{transition:opacity .2s,transform .2s}}
+.ai-sub{border:1.5px solid var(--line);border-radius:3px;padding:12px;background:var(--bg)}
+.ai-topics,.files{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:6px}
+.ai-topics label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.ai-topics label.dup{color:var(--ink2)}
+.ai-topics input{margin-top:3px}
+.files li{display:flex;gap:8px;align-items:center;justify-content:space-between;border:1.5px solid var(--line);border-radius:3px;padding:4px 4px 4px 10px;overflow-wrap:anywhere}
+.vh{position:absolute;width:1px;height:1px;opacity:0;overflow:hidden}
+label.btn{cursor:pointer;display:inline-flex;align-items:center}
+.fab{position:fixed;right:24px;bottom:24px;width:52px;height:52px;border-radius:50%;background:var(--accent);color:var(--accent-ink);border:2px solid var(--ink);box-shadow:3px 3px 0 var(--ink);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:35;transition:transform .12s,box-shadow .12s,filter .12s}
+.fab:hover{filter:brightness(1.08);transform:translate(-1px,-1px);box-shadow:4px 4px 0 var(--ink)}
+.fab:active{transform:translate(2px,2px);box-shadow:1px 1px 0 var(--ink)}
+@media (max-width:760px){.fab{bottom:calc(76px + env(safe-area-inset-bottom,0px));right:16px;width:48px;height:48px}}
+@keyframes ai-pulse{0%{box-shadow:0 0 0 0 var(--accent)}50%{box-shadow:0 0 0 4px var(--accent)}100%{box-shadow:0 0 0 0 var(--accent)}}
+.ai-highlight{animation:ai-pulse 1.2s ease}
+.chip.q-num{color:var(--ph-practice);border-color:var(--ph-practice)}
+.chip.q-desc{color:var(--ph-cover);border-color:var(--ph-cover)}
+</style>
